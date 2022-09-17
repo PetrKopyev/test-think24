@@ -1,7 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  publicPath: '/test-think24/',
+  publicPath: process.env.NODE_ENV === 'production'
+      ? '/test-think24/'
+      : '/',
   lintOnSave: false,
   chainWebpack: (config) => {
     config.resolve.alias
