@@ -6,6 +6,7 @@
           <router-link
             class="header_link"
             to="/"
+            @click="cleanResults"
           >
             <img
               class="header_icon"
@@ -205,9 +206,29 @@ export default {
     };
   },
   methods: {
+    cleanResults() {
+      let genres = this.genres
+      let noGenres = this.noGenres
+      genres.map(item => {
+        item.checked = false
+        item.warn = false
+      })
+      noGenres.map(item => {
+        item.checked = false
+        item.warn = false
+      })
+    },
     check() {
       let genres = this.genres
       let noGenres = this.noGenres
+      genres.map(item => {
+        item.checked = false
+        item.warn = false
+      })
+      noGenres.map(item => {
+        item.checked = false
+        item.warn = false
+      })
 
       const checkedGenres = genres.map(item => {
         if (item.category === 'genres') {
